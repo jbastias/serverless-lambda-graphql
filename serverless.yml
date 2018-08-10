@@ -1,0 +1,14 @@
+# serverless.yml
+service: test-serverless-lambda-graphql
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  graphqlHandler:
+    handler: dist/lambda.graphqlHandler
+    events:
+      - http:
+          path: graphql
+          method: post
